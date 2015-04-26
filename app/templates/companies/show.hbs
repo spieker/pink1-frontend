@@ -13,7 +13,13 @@
       <div class="list-group">
         {{#each user in model.users}}
         {{#link-to 'users.show' user class="list-group-item"}}
-          {{user.email}}
+        <h5>{{user.email}}</h5>
+        <small>
+          <strong>Aliases:</strong>
+          {{#each alias in user.aliases}}
+            {{alias.source}}
+          {{/each}}
+        </small>
         {{/link-to}}
         {{/each}}
       </div>
