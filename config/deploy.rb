@@ -37,8 +37,6 @@ namespace :deploy do
     run_locally do
       execute :git, 'submodule', 'init'
       execute :git, 'submodule', 'update'
-      execute :npm, 'install', '-g', 'ember-cli'
-      execute :npm, 'install', '-g', 'bower'
       execute :npm, 'install'
       execute :bower, 'install'
       execute :ember, 'build', "--environment=#{fetch :stage}"
