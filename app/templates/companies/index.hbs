@@ -1,0 +1,13 @@
+<div class="pink1-header" id="content" tabindex="-1">
+  <div class="container">
+    <h1>Companies</h1>
+  </div>
+</div>
+
+<div class="container">
+  <ul>
+    {{#each company in model}}
+    <li>{{#link-to 'companies.show' company}}{{company.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+</div>

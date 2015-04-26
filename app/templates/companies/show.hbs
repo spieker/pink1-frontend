@@ -1,0 +1,31 @@
+<div class="pink1-header" id="content" tabindex="-1">
+  <div class="container">
+    <h1>{{model.name}}</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Users</h2>
+      <button type="button" class="btn btn-default" {{action 'addUser'}}>Add user</button>
+      <br /><br />
+      <div class="list-group">
+        {{#each user in model.users}}
+        {{#link-to 'users.show' user class="list-group-item"}}
+          {{user.email}}
+        {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <h2>Domains</h2>
+      <div class="list-group">
+        {{#each domain in model.domains}}
+        <li class="list-group-item">{{domain.name}}</li>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+

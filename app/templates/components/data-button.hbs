@@ -1,0 +1,6 @@
+{{#if waiting}}
+  <em class="fa fa-spinner fa-spin"></em>
+  {{t 'dataButton.loading'}}
+{{else}}
+  {{yield}}
+{{/if}}

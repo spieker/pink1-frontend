@@ -1,0 +1,25 @@
+<div class="pink1-header" id="content" tabindex="-1">
+  <div class="container">
+    <h1>{{model.email}}</h1>
+    <p>{{model.uuid}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Aliases</h2>
+      <div class="list-group">
+        {{#each alias in model.aliases}}
+        <div class="list-group-item">{{alias.source}}</div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-default btn-block" {{action 'openModal' 'edit-user' model}}><em class="fa fa-pencil"></em> Edit</button>
+      <button type="button" class="btn btn-danger btn-block" {{action 'delete'}}><em class="fa fa-trash"></em> Delete</button>
+    </div>
+  </div>
+</div>
+
+
