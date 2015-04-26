@@ -8,8 +8,8 @@
   <div class="row">
     <div class="col-sm-6">
       <h2>Users</h2>
-      <button type="button" class="btn btn-default" {{action 'addUser'}}>Add user</button>
-      <br /><br />
+      <button type="button" class="btn btn-default btn-block" {{action 'addUser'}}>Add user</button>
+      <br />
       <div class="list-group">
         {{#each user in model.users}}
         {{#link-to 'users.show' user class="list-group-item"}}
@@ -20,9 +20,16 @@
     </div>
     <div class="col-sm-6">
       <h2>Domains</h2>
+      <button type="button" class="btn btn-default btn-block" {{action 'addDomain'}}>Add domain</button>
+      <br />
       <div class="list-group">
         {{#each domain in model.domains}}
-        <li class="list-group-item">{{domain.name}}</li>
+        <li class="list-group-item">
+          <span class="actions">
+            <button class="btn btn-xs btn-danger" {{action 'deleteDomain' domain}}><em class="fa fa-trash"></em></button>
+          </span>
+          {{domain.name}}
+        </li>
         {{/each}}
       </div>
     </div>

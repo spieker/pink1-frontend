@@ -9,9 +9,18 @@
   <div class="row">
     <div class="col-sm-6">
       <h2>Aliases</h2>
+      <button type="button" class="btn btn-default btn-block" {{action 'newAlias'}}>New alias</button>
+      <br />
       <div class="list-group">
         {{#each alias in model.aliases}}
-        <div class="list-group-item">{{alias.source}}</div>
+        <div class="list-group-item">
+          <span class="actions">
+            <button class="btn btn-xs btn-danger" {{action 'deleteAlias' alias}}><em class="fa fa-trash"></em></button>
+          </span>
+          {{alias.source}}
+        </div>
+        {{else}}
+        No aliases available.
         {{/each}}
       </div>
     </div>
